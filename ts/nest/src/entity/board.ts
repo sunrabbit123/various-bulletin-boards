@@ -20,5 +20,5 @@ export class Board {
   tag: string[];
 
   @CreateDateColumn()
-  createAt: Date;
+  createdAt: Date;
 }
