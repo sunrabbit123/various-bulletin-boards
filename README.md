@@ -2,14 +2,14 @@
 
 ## List
 
-1. [Golang](./go)(미완)
-2. [Python](./py)(미완)
-   1. [fastapi](./py/fastapi)(미완)
-   2. [flask](./py/flask)(미완)
-3. [TypeScript](./ts)(미완)
-   1. [express](./ts/express)(미완)
-   2. [koa](./ts/koa)(미완)
-   3. [nest](./ts/nest)(미완)
+1. [Golang](./go)[X]
+2. [Python](./py)[X]
+   1. [fastapi](./py/fastapi)[X]
+   2. [flask](./py/flask)[X]
+3. [TypeScript](./ts)[X]
+   1. [express](./ts/express)[X]
+   2. [koa](./ts/koa)[X]
+   3. [nest](./ts/nest)[O]
 
 ### API 명세서
 
