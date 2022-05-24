@@ -2,8 +2,8 @@
 
 ## 사용스택
 
-1. koa.js
-2. Prisma
+1. Nest
+2. TypeORm
 
 ## Description
 
