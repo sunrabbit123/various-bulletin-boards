@@ -1,4 +1,4 @@
-# 이것은 koa 그러기에 koa
+# 이것은 Nest, 그러기에 Nest
 
 ## 사용스택
 
@@ -32,13 +32,13 @@ $ yarn start:prod
 
 ```bash
 # unit tests
-$ npm run test
+$ yarn test
 
 # e2e tests
-$ npm run test:e2e
+$ yarn test:e2e
 
 # test coverage
-$ npm run test:cov
+$ yarn test:cov
 ```
 
 ## Support
