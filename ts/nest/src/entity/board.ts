@@ -2,10 +2,12 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  Index,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
 @Entity()
+@Index(['idx', 'title', 'tag', 'createdAt'])
 export class Board {
   @PrimaryGeneratedColumn()
   idx: number;
