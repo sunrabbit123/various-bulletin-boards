@@ -10,7 +10,7 @@ export interface BoardPageQuery {
 export interface BoardBase {
   title: string;
   content: string;
-  tag: string[];
+  tag: string;
 }
 
 export interface Board extends BoardBase {
