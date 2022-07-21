@@ -19,7 +19,7 @@ export class Board {
   content: string;
 
   @Column()
-  tag: string[];
+  tag: string;
 
   @CreateDateColumn()
   createdAt: Date;
