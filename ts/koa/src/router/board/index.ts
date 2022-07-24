@@ -5,7 +5,7 @@ const board: Router = new Router();
 
 board.get("/:idx", Service.getB);
 board.get("/", Service.getBList);
-board.post("/", Service.createBList);
+board.post("/", Service.createB);
 board.patch("/:idx", Service.patchB);
 board.delete("/:idx", Service.deleteB);
 

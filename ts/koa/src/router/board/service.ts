@@ -25,7 +25,7 @@ export const getBList = async (ctx: Context) => {
   //TODO ctx.request.query 안에 있는 인자값들 유효성 검사
 };
 
-export const createBList = async (ctx: Context) => {
+export const createB = async (ctx: Context) => {
   ctx.body = createResBody(await BoardRepo.insertB((ctx.request as any).body));
 };
 
