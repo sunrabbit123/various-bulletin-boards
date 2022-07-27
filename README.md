@@ -6,9 +6,9 @@
 2. [Python](./py)[X]
    1. [fastapi](./py/fastapi)[X]
    2. [flask](./py/flask)[X]
-3. [TypeScript](./ts)[X]
-   1. [express](./ts/express)[X]
-   2. [koa](./ts/koa)[X]
+3. [TypeScript](./ts)[O]
+   1. [express](./ts/express)[O]
+   2. [koa](./ts/koa)[O]
    3. [nest](./ts/nest)[O]
 
 ### API 명세서
