@@ -1,5 +1,5 @@
 # TypeScript
 
-1. [express](./ts/express)[O]
-2. [koa](./ts/koa)[O]
-3. [nest](./ts/nest)[O]
+1. [Express](./express)[O]
+2. [Koa](./koa)[O]
+3. [Nest.JS](./nest)[O]
