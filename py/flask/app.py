@@ -1,13 +1,5 @@
 from flask import Flask
 
-from configparser import ConfigParser
-
-config = ConfigParser()
-config.read("../config.ini")
-
-from .repo import get_db_session
-
-db_session = get_db_session(config)
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
@@ -17,9 +9,10 @@ def generate_response(data, code: str = "DP000", status: str = "success"):
     return {"status": status, "code": code, "data": data}
 
 
-@app.route("/board/:idx")
-def get_board():
-    return generate_response()
+@app.route("/board/<int:idx>")
+def get_board(idx):
+    data = board_repo.getB(idx)
+    return generate_response(data)
 
 
 @app.route("/board")
