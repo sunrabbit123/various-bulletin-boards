@@ -1,1 +1,1 @@
-from .board_repo import *
+from .board_repo import BoardRepository
