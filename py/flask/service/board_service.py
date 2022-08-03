@@ -8,7 +8,7 @@ class BoardService:
         return generate_response(BoardRepository.getB(idx))
 
     @staticmethod
-    def getBList(page: int, direction="asc", sortBy="created_At"):
+    def getBList(page: int, direction="asc", sortBy="created_at"):
         return generate_response(BoardRepository.getBList(page, direction, sortBy))
 
     @staticmethod

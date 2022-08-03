@@ -1,31 +1,24 @@
+from crypt import methods
 from flask import Flask, request
 from .service import BoardService
 
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False
 
-@app.route("/board/<int:idx>")
-def get_board(idx):
-    return BoardService.getB(idx)
+@app.route("/board/<int:idx>", methods=["GET", "PATCH", "DELETE"])
+def board_with_idx(idx):
+    return {
+        "GET" : BoardService.getB(idx),
+        "PATCH" : BoardService.patchB(idx, request.args),
+        "DELETE" : BoardService.deleteB(idx)
+    }[request.method]
 
-@app.route("/board")
+@app.route("/board", methods=["GET", "POST"])
 def get_board_list():
-    return BoardService.getBList()
-
-
-@app.route("/board")
-def create_board():
-    return BoardService.createB(request.args)
-
-
-@app.route("/board/<int:idx>")
-def patch_board(idx):
-    return BoardService.patchB(idx, request.args)
-
-
-@app.route("/board/<int:idx>")
-def delete_board(idx):
-    return BoardService.deleteB(idx)
+    return {
+        "GET" : BoardService.getBList,
+        "POST" : BoardService.createB
+    }[request.method](request.args)
 
 
 if __name__ == "__main__":
