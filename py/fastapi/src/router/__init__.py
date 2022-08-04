@@ -12,7 +12,7 @@ def test():
 
 
 router.include_router(
-    user_router,
+    board_router,
     prefix="/board",
     tags=["board"],
     responses={404: {"description": "Not found"}},

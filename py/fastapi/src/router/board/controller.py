@@ -1,15 +1,10 @@
 from fastapi import APIRouter
-from pydantic import BaseModel
 
 from .service import BoardService
-
+from ....model.schema import Board
 board_router = APIRouter()
 
 
-class Board(BaseModel):
-    title: str
-    content: str
-    tag: str
 
 
 @board_router.get("/{idx}", status_code=200)
@@ -28,8 +23,8 @@ def create_board(item: Board):
 
 
 @board_router.patch("/{idx}", statud_code=200)
-def patch_board(idx: int, title: str = "", content: str = "", tag: str = ""):
-    return BoardService.patch_b(idx, {"title": title, "content": content, "tag": tag})
+def patch_board(idx: int, item : Board):
+    return BoardService.patch_b(idx, item)
 
 
 @board_router.delete("/{idx}")

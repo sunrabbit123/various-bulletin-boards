@@ -7,6 +7,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from .router import router_list
+from .middleware import DBSession
 
 
 def set_router(app: FastAPI):
@@ -18,6 +19,7 @@ def set_router(app: FastAPI):
         )
 
 
+app.add_middleware(DBSession, db_url=config.get("default", "DB_URL"))
 def set_middleware(app: FastAPI):
     app.add_middleware(
         CORSMiddleware,
