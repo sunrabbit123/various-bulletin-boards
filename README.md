@@ -13,6 +13,8 @@
 
 ### API 명세서
 
+[Postman JSON Link](https://www.getpostman.com/collections/ae9a809ba9e1bc474b2e)
+
 #### GET /board/{idx : number}
 
 게시물 `idx`를 기준으로 조회합니다.  
@@ -126,7 +128,7 @@
 {
   "title": "Optional값",
   "content": "Optional값",
-  "tag": ["Optional값"]
+  "tag": "Optional값"
 }
 ```
 

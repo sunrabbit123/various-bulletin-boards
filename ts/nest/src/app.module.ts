@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { BoardRepository } from './repository/board';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { AppService } from './app.service';
       logging: true,
       url: process.env.DB_URL,
     }),
+    TypeOrmModule.forFeature([BoardRepository]),
   ],
   controllers: [AppController],
   providers: [AppService],

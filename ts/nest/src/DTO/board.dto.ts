@@ -1,4 +1,4 @@
-export type Direction = 'asc' | 'desc';
+export type Direction = 'ASC' | 'DESC';
 export type SortBy = 'createdat';
 
 export interface BoardPageQuery {

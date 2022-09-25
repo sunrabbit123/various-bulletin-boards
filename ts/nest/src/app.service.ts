@@ -1,10 +1,13 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
 import { BoardBase, BoardPageQuery } from './DTO/board.dto';
 import { BoardRepository } from './repository/board';
 
 @Injectable()
 export class AppService {
-  constructor(private boardRepo: BoardRepository) {}
+  constructor(
+    @InjectRepository(BoardRepository) private boardRepo: BoardRepository,
+  ) {}
   async getBoard(idx: number) {
     return {
       success: true,
