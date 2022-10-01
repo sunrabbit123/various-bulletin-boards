@@ -6,15 +6,15 @@ interface BoardBase {
   tag: string;
 }
 const PAGE_TAKEN = 15;
-const prisma = new PrismaClient();
+const prisma: PrismaClient = new PrismaClient();
 
 export const getB: Function = async (idx: number) =>
   prisma.board.findFirst({ where: { idx } });
 
 export const getBList: Function = async ({
-  page,
-  direction,
-  sortBy,
+  page = 1,
+  direction = "desc",
+  sortBy = "createdAt",
 }: {
   page: number;
   direction: "asc" | "desc";

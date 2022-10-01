@@ -1,22 +1,14 @@
 {
+  "include": ["src/**/*.ts"],
   "compilerOptions": {
-    "module": "ESNext",
-    "declaration": true,
-    "removeComments": true,
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Node",
-    "target": "ESNext",
-    "strict": true,
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "target": "ES5",
     "sourceMap": true,
-    "incremental": true,
-    "skipLibCheck": true,
-    "strictNullChecks": false,
-    "noImplicitAny": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
+    "outDir": "./dist",
+    "baseUrl": "./",
     "esModuleInterop": true,
-    "lib": ["ESNext"],
-    "outDir": "dist"
+    "lib": ["ES5", "ES6"],
+    "moduleResolution": "NodeNext"
   }
 }
