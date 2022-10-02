@@ -5,6 +5,7 @@ from pytz import timezone
 
 from .base import Base
 
+
 class Board(Base):
     __tablename__ = "board"
 
@@ -12,10 +13,9 @@ class Board(Base):
     title = Column(String(32))
     content = Column(Text, nullable=False)
     tag = Column(Text, nullable=False)
-    created_at = Column(DateTime(), default=datetime.now(timezone("Asia/Seolu")))
+    createdAt = Column(DateTime(), default=datetime.now(timezone("Asia/Seoul")))
 
-    def __init__(self, title : str, content : str, tag : str):
+    def __init__(self, title: str, content: str, tag: str):
         self.title = title
         self.content = content
         self.tag = tag
-        
