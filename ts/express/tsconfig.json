@@ -1,0 +1,14 @@
+{
+  "include": ["src/**/*.ts", "src/**/*.js"],
+  "compilerOptions": {
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "target": "ES5",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "esModuleInterop": true,
+    "lib": ["ES5", "ES6"],
+    "moduleResolution": "NodeNext"
+  }
+}

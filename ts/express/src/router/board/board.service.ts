@@ -13,7 +13,7 @@ const creeateErrorRes: Function = (error: string) => ({
 });
 
 export const getB = async (req: Request, res: Response) => {
-  if (typeof req.params.idx === "number") {
+  if (Number.isInteger(Number(req.params.idx))) {
     res.json(createResBody(await BoardRepo.getB(req.params.idx)));
   } else {
     res.json(creeateErrorRes("idx가 숫자가 아닙니다."));
@@ -21,16 +21,29 @@ export const getB = async (req: Request, res: Response) => {
 };
 
 export const getBList = async (req: Request, res: Response) => {
-  res.json(createResBody(await BoardRepo.getBList(req.query)));
+  res.json(
+    createResBody(
+      await BoardRepo.getBList({
+        page: 1,
+        sortBy: "createdAt",
+        orderBy: "desc",
+        ...req.query,
+      }),
+    ),
+  );
 };
 export const createB = async (req: Request, res: Response) => {
   res.json(createResBody(await BoardRepo.insertB(req.body)));
 };
 export const patchB = async (req: Request, res: Response) => {
-  res.json(createResBody(await BoardRepo.patchB(req.body)));
+  if (Number.isInteger(Number(req.params.idx))) {
+    res.json(createResBody(await BoardRepo.patchB(req.params.idx, req.body)));
+  } else {
+    res.json(creeateErrorRes("idx가 숫자가 아닙니다."));
+  }
 };
 export const deleteB = async (req: Request, res: Response) => {
-  if (typeof req.params.idx === "number") {
+  if (Number.isInteger(Number(req.params.idx))) {
     res.json(createResBody(await BoardRepo.deleteB(req.params.idx)));
   } else {
     res.json(creeateErrorRes("idx가 숫자가 아닙니다."));

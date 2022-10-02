@@ -7,22 +7,21 @@ interface BoardBase {
 }
 
 const PAGE_TAKEN = 15;
-const { QUERY } = POOL;
-const { VALUES, SET } = QUERY;
+const { QUERY, VALUES, SET } = POOL;
 
 export const getB: Function = (idx: number) =>
   QUERY`SELECT * FROM board WHERE idx = ${idx}`;
 
 export const getBList: Function = ({
-  page,
-  direction,
-  sortBy,
+  page = 1,
+  orderBy = "desc",
+  sortBy = "createdAt",
 }: {
   page: number;
-  direction: "asc" | "desc";
+  orderBy: "asc" | "desc";
   sortBy: "createdAt";
 }) =>
-  QUERY`SELECT * FROM board ORDER BY ${sortBy} ${direction} LIMIT ${
+  QUERY`SELECT * FROM board ORDER BY ${sortBy} ${orderBy} LIMIT ${
     (page - 1) * PAGE_TAKEN
   }, ${PAGE_TAKEN}`;
 
